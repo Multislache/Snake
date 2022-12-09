@@ -4,12 +4,10 @@ class Cellule:
     def __init__(self, v, s=None):
         self.valeur = v
         self.suivante = s
-
     def __str__(self):
         if self.suivante is None:
-            return 'Cellule(' + str(self.valeur) + ')'
-        return 'Cellule(' + str(self.valeur) + ', ' + str(self.suivante) + ')'
-
+            return str(self.valeur)
+        return str(self.valeur) +str(self.suivante)
     def __len__(self):
         if self.suivante is None:
             return 1
@@ -37,6 +35,10 @@ class File:
         self.longueur = 0
     def __str__(self):
         return str(self.premier)
+    def appartient(self,x):
+        if self.premier == x:
+            return True
+        return False
     def est_vide(self):
         if self.longueur == 0:
             return True
